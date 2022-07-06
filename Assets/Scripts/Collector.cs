@@ -21,12 +21,17 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("collectable"))
+        if (other.gameObject.CompareTag("collectable")&& other.gameObject.GetComponent<CollectableCube>().GETiswastaken()==false)
         {
             Height++;
             other.gameObject.GetComponent<CollectableCube>().doitTaken();
             other.gameObject.GetComponent<CollectableCube>().Setindex(Height);
             other.gameObject.transform.parent = MainCube.transform;
         }
+    }
+
+    public void HeightReduction()
+    {
+        Height--;
     }
 }

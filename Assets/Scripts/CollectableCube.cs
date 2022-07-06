@@ -6,6 +6,7 @@ public class CollectableCube : MonoBehaviour
 {
     bool iswastaken=false;
     int index;
+    public Collector collector;
     void Start()
     {
         
@@ -41,6 +42,18 @@ public class CollectableCube : MonoBehaviour
     public void Setindex(int index)
     {
         this.index = index;// this.index globaldekidir  
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Barrier"))
+        {
+            collector.HeightReduction();
+            this.transform.parent = null;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+        }
     }
 
 }
