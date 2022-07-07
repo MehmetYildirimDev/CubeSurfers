@@ -12,7 +12,7 @@ public class ButtonControl : MonoBehaviour
     
     public void StartButton()
     {
-
+        SceneManager.LoadScene("GameScene");
     }
     public void SettingsButton()
     {
