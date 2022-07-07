@@ -9,19 +9,23 @@ public class ButtonControl : MonoBehaviour
 
     public Image MainPanel;
     public Image SettingsPanel;
+    public SoundsS soundsS;
     
     public void StartButton()
     {
         SceneManager.LoadScene("GameScene");
+        soundsS.ClickSound();
     }
     public void SettingsButton()
     {
         MainPanel.gameObject.SetActive(false);
         SettingsPanel.gameObject.SetActive(true);
+        soundsS.ClickSound();
     }
     public void QuitButton()
     {
-        
+        soundsS.ClickSound();
+        Application.Quit();
     }
 
 }

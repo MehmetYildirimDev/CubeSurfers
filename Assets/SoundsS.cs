@@ -7,6 +7,11 @@ public class SoundsS : MonoBehaviour
 
     static bool SahnedeMuzikVar = false;
     public AudioClip[] audioClips;
+    public AudioSource audioSource;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Start()
     {
         if (!SahnedeMuzikVar)
@@ -18,7 +23,18 @@ public class SoundsS : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //sahneler arasi geciste bu objeyi yok etme diyoruz
     }
+    public void ClickSound()
+    {
+        audioSource.PlayOneShot(audioClips[0]);
+    }
+     public void TakeCubeSound()
+    {
+        audioSource.PlayOneShot(audioClips[1]);
+    }
+     public void DropCubeSound()
+    {
+        audioSource.PlayOneShot(audioClips[2]);
+    }
+
 }

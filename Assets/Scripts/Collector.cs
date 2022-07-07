@@ -6,9 +6,11 @@ public class Collector : MonoBehaviour
 {
     GameObject MainCube;
     int Height;
+    SoundsS soundsS;
     private void Awake()
     {
         MainCube = GameObject.Find("MainCube");
+        soundsS = GameObject.FindObjectOfType<SoundsS>();
         // MainCube = GameObject.FindObjectOfType<MovementCube>().gameObject;
     }
 
@@ -27,6 +29,7 @@ public class Collector : MonoBehaviour
             other.gameObject.GetComponent<CollectableCube>().doitTaken();
             other.gameObject.GetComponent<CollectableCube>().Setindex(Height);
             other.gameObject.transform.parent = MainCube.transform;
+            soundsS.TakeCubeSound();
         }
     }
 

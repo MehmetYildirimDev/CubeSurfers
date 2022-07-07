@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainPanel: {fileID: 1787033877}
   SettingsPanel: {fileID: 1414539410}
+  soundsS: {fileID: 76864721}
 --- !u!1 &76864719
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 281c4ed0672018c489535f13ff57bb05, type: 3}
+  - {fileID: 8300000, guid: cf51d708ffe66e043a7cd656317b6138, type: 3}
+  - {fileID: 8300000, guid: 3a6a032b6d818e241977979dee66b2e3, type: 3}
+  audioSource: {fileID: 76864720}
 --- !u!4 &76864722
 Transform:
   m_ObjectHideFlags: 0

@@ -7,9 +7,10 @@ public class CollectableCube : MonoBehaviour
     bool iswastaken=false;
     int index;
     public Collector collector;
-    void Start()
+    SoundsS soundsS;
+    private void Awake()
     {
-        
+        soundsS = GameObject.FindObjectOfType<SoundsS>();
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class CollectableCube : MonoBehaviour
             this.transform.parent = null;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
-
+            soundsS.DropCubeSound();
         }
     }
 
