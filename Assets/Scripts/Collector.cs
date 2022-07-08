@@ -8,6 +8,7 @@ public class Collector : MonoBehaviour
     int Height;
     SoundsS soundsS;
     public ParticleSystem effect;
+    public Animator animator;
     private void Awake()
     {
         MainCube = GameObject.Find("MainCube");
@@ -32,7 +33,6 @@ public class Collector : MonoBehaviour
             other.gameObject.transform.parent = MainCube.transform;
             soundsS.TakeCubeSound();
             effect.Play();
-
         }
     }
 
