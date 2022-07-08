@@ -27,5 +27,11 @@ public class ButtonControl : MonoBehaviour
         soundsS.ClickSound();
         Application.Quit();
     }
+    public void SettingsBackButton()
+    {
+        MainPanel.gameObject.SetActive(true);
+        SettingsPanel.gameObject.SetActive(false);
+        soundsS.ClickSound();
+    }
 
 }
