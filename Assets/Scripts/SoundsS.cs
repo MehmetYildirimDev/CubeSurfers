@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class SoundsS : MonoBehaviour
 {
-
-    static bool SahnedeMuzikVar = false;
+    //Sorun Statik deðiþken
+    //static bool SahnedeMuzikVar = false;
     public AudioClip[] audioClips;
     public AudioSource audioSource;
+    private static SoundsS sounds;
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-    void Start()
-    {
-        if (!SahnedeMuzikVar)
+        if (sounds==null)
         {
-            SahnedeMuzikVar = true;
+            sounds = this;
             GameObject.DontDestroyOnLoad(this.gameObject);
         }
-        else
+        else if (this!=sounds)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);   
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
+
     public void ClickSound()
     {
         audioSource.PlayOneShot(audioClips[0]);
