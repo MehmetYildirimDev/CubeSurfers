@@ -9,8 +9,13 @@ public class ButtonControl : MonoBehaviour
 
     public Image MainPanel;
     public Image SettingsPanel;
-    public SoundsS soundsS;
-    
+    SoundsS soundsS;
+
+    private void Awake()
+    {
+        soundsS = GameObject.FindObjectOfType<SoundsS>();
+    }
+
     public void StartButton()
     {
         SceneManager.LoadScene("GameScene");
