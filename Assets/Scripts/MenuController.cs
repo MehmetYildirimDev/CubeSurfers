@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MenuController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MenuController : MonoBehaviour
     public GameObject OptionsMenu;
     public Button PauseButton;
     public Button OptionsBackButton;
+
+    public AudioMixer audioMixer;
 
     void Start()
     {
@@ -57,6 +60,17 @@ public class MenuController : MonoBehaviour
     public void SetGraphics(int level)
     {
         QualitySettings.SetQualityLevel(level);
+    }
+
+    public void SettingsSetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
+        //AudioSource output bizimaudiomixer olmali buna dikkat
+    }
+
+    public void SetFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
     }
 
 
